@@ -1,10 +1,19 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'Install OpenCV'
+description: 'Install OpenCV on your Github Actions workflows with just one simple action'
+author: 'florianblume'
+branding:
+  icon: 'eye'
+  color: 'blue'
 inputs:
-  myInput:              # change this
-    description: 'input description here'
-    default: 'default value if applicable'
+  dir:
+    description: 'Directory to install OpenCV'
+  cached:
+    description: "Whether to build OpenCV completely again or just run make install from previously built binaries."
+    default: 'false'
+  install-deps:
+    description: 'Whether or not to install OpenCV dependencies on Linux'
+    default: 'true'
+
 runs:
   using: 'node12'
-  main: 'dist/index.js'
+  main: 'dist/main.js'
